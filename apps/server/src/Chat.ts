@@ -10,7 +10,7 @@ export class Chat {
     constructor(user1: WebSocket | null,public roomId: string) {
         this.user1 = user1;
         this.user2 = null;
-        this.roomId = uuidv4();
+        this.roomId = roomId;
     }
 
     addUser(user: WebSocket): boolean {

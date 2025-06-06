@@ -77,7 +77,6 @@ export class ChatManager {
                 if (roomId) {
                     const chat = this.chats.get(roomId);
                     if (chat) {
-                        chat.addMessage(socket, message.line);
                         // Publish the message via Redis
                         redisPub.publish(roomId, JSON.stringify({ type: CHAT_LINES, payload: message.line }));
                     }

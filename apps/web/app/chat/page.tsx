@@ -1,15 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
 import { useSocket } from '../hooks/useSocket';
 
 const JOIN = 'join_chat';
 const CHAT_LINES = 'chat_lines';
 
 export default function Chat() {
-  const searchParams = useSearchParams();
-  const roomId = searchParams.get('roomId');
+  const roomId = localStorage.getItem('roomId') || null;
   const [userId, setUserId] = useState<string | null>(null);
   const socket = useSocket();
 

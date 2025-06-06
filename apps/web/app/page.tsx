@@ -73,10 +73,8 @@ function Land() {
             <button
               className='ml-2 bg-yellow-300 px-4 py-2 rounded text-xl'
               onClick={() => {
-                socket?.send(JSON.stringify({
-                  type: JOIN,
-                  roomId: roomIdInput,
-                }));
+                localStorage.setItem('roomId', roomIdInput);
+                router.push('/chat');
               }}
             >
               Join
